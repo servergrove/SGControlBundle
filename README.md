@@ -12,7 +12,22 @@ user profile.
 
 ## Installation:
 
-Download or clone the bundle and enable it in your app/AppKernel.php
+Download or clone the bundle. If you use deps file add it like this:
+
+	[SGControlBundle]
+		git=git://github.com/servergrove/SGControlBundle.git
+		target=/bundles/ServerGrove/Bundle/SGControlBundle
+
+Add ServerGrove namespace to app/autoload.php:
+
+	$loader->registerNamespaces(array(
+		...
+		'ServerGrove' => __DIR__.'/../vendor/bundles',
+		...
+	));
+
+
+Enable it in your app/AppKernel.php
 
 	public function registerBundles()
 	{
