@@ -59,10 +59,10 @@ Once you have the API key and secret, add it to app/config.yml:
 
 ## More information:
 
-* [List of available calls and parameters](https://control.servergrove.com/docs/api)
-* [Website](http://www.servergrove.com/)
-* [Blog](http://blog.servergrove.com/)
-* [Control Panel](https://control.servergrove.com/)
-* [Knowledge Base](https://secure.servergrove.com/clients)
-* [Twitter](http://twitter.com/servergrove)
-* [Downloads](http://github.com/servergrove)
+* [List of available API calls and parameters](https://control.servergrove.com/docs/api)
+* [ServerGrove Website](http://www.servergrove.com/)
+* [ServerGrove Blog](http://blog.servergrove.com/)
+* [ServerGrove Control Panel](https://control.servergrove.com/)
+* [ServerGrove Knowledge Base](https://secure.servergrove.com/clients)
+* [Follow ServerGrove @ Twitter](http://twitter.com/servergrove)
+* [GitHub Downloads](http://github.com/servergrove)
