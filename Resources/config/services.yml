@@ -1,0 +1,9 @@
+parameters:
+    sgc_api.client.class: ServerGrove\Bundle\SGControlBundle\APIClient
+    sgc_api.url: https://control.servergrove.com
+    sgc_api.client.apiKey: 38d25347692ce2bebd5035678e46cf1e
+    sgc_api.client.apiSecret: 175d6c3a657e10bb7b5b21fc2b6b1a28
+services:
+    sgc_api_client:
+        class: %sgc_api.client.class%
+        arguments: [%sgc_api.url%]
