@@ -15,7 +15,7 @@ class APIClient
         $this->url = $url;
     }
 
-    public function getFullUrl($call, $args)
+    public function getFullUrl($call, array $args = array())
     {
         $args = array_merge($this->args, $args);
         return $this->url . '/api/' . $call . '.' . $this->format . '?' . http_build_query($args);
@@ -28,7 +28,7 @@ class APIClient
      * @return bool
      * @throws \Exception
      */
-    public function call($call, $args = array())
+    public function call($call, array $args = array())
     {
         if (!function_exists('curl_init')) {
             throw new \Exception("curl support not found. please install the curl extension.");
