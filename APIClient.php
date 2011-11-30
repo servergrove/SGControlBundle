@@ -151,14 +151,14 @@ class APIClient
         return $this->setArg('apiSecret', $value);
     }
 
-    public function dryRun()
+    public function dryRun($value = 1)
     {
-        return $this->setArg('dryRun', 1);
+        return $this->setArg('dryRun', $value);
     }
 
-    public function debug()
+    public function debug($value = 1)
     {
-        return $this->setArg('debug', 1);
+        return $this->setArg('debug', $value);
     }
 
 }
