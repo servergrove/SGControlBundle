@@ -1,0 +1,26 @@
+{
+    "name": "servergrove/sgcontrol-bundle",
+    "description": "Client for ServerGrove Control Panel API",
+    "keywords": ["api", "vps", "servergrove"],
+    "homepage": "http://github.com/servergrove/SGControlBundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name":" Pablo Godel",
+            "email": "pablo@servergrove.com",
+            "homepage": "http://servergrove.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "ServerGrove\\Bundle\\SGControlBundle": ""
+        }
+    },
+    "target-dir": "ServerGrove/Bundle/SGControlBundle"
+}
