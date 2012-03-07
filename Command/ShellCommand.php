@@ -235,6 +235,7 @@ class ShellCommand extends ContainerAwareCommand
     protected function setServer($server) {
         $this->server = $this->servers[$server];
         $this->info("Selected server ".$this->server['hostname']);
+        $this->reset(false);
         return true;
     }
 
@@ -460,10 +461,20 @@ class ShellCommand extends ContainerAwareCommand
         return $this->reset();
     }
 
-    protected function reset()
+    protected function reset($server = true, $domain = true, $app = true)
     {
-        $this->server = $this->domain = $this->app = null;
-        $this->servers = $this->domains = $this->apps = array();
+        if ($server) {
+            $this->server = null;
+            $this->servers = array();
+        }
+        if ($domain) {
+            $this->domain = null;
+            $this->domains = array();
+        }
+        if ($app) {
+            $this->app = null;
+            $this->apps = array();
+        }
 
         return true;
     }
