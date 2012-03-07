@@ -21,8 +21,7 @@ class APIClient
 
     public function getFullUrl($call, array $args = array())
     {
-        $args = array_merge($this->args, $args);
-        return $this->url . '/api/' . $call . '.' . $this->format . '?' . http_build_query($args);
+        return $this->url . '/api/' . $call . '.' . $this->format .(count($args) ? '?' . http_build_query($args) : '');
     }
 
     /**
@@ -38,11 +37,17 @@ class APIClient
             throw new \Exception("curl support not found. please install the curl extension.");
         }
 
-        $url = $this->getFullUrl($call, $args);
+        $args = array_merge($this->args, $args);
+
+        $post_data = http_build_query($args);
+
+        $url = $this->getFullUrl($call);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
         $this->response = curl_exec($ch);
         curl_close($ch);
         return $this->isSuccess($this->response);
