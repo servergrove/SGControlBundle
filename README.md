@@ -77,6 +77,7 @@ Commands:
 * help/h/? - list commands
 * servers - list servers
 * server [option] - selects a server from the servers list. option can be an numeric option from the list or a server name. A partial name can also be provided and it will select the first match
+* exec cmd - executes a command in the selected server
 * reboot [server] - reboots a server. [server] is optional. If not given it will use the selected server. It will ask for confirmation before proceding
 * shutdown [server] - shuts down a server. [server] is optional. If not given it will use the selected server. It will ask for confirmation before proceding
 * bootup [server] - boots up a server. [server] is optional. If not given it will use the selected server
