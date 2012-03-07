@@ -4,8 +4,12 @@ namespace ServerGrove\Bundle\SGControlBundle;
 
 class APIClient
 {
+    const FORMAT_JSON = 'json';
+    const FORMAT_ARRAY = 'array';
+    const FORMAT_RAW = 'raw';
+
     protected $url;
-    protected $format = 'json';
+    protected $format = self::FORMAT_JSON;
     protected $args = array();
     protected $call;
     protected $response;
@@ -44,11 +48,17 @@ class APIClient
         return $this->isSuccess($this->response);
     }
 
-    public function getResponse()
+    public function getResponse($format = null)
     {
-        switch ($this->format) {
+        if (!$format) {
+            $format = $this->format;
+        }
+        switch ($format) {
             case 'json':
                 return json_decode($this->response);
+                break;
+            case 'array':
+                return json_decode($this->response, true);
                 break;
             default:
                 return $this->response;
