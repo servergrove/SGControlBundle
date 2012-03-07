@@ -1,6 +1,6 @@
 # SGControlBundle
 
-The SGControlBundle is a Symfony2 bundle that provides command line tools to interact with the ServerGrove Control Panel.
+The SGControlBundle is a Symfony2 bundle that provides command line tools to interact with the ServerGrove Control Panel. It also provides an interactive shell.
 
 The following command line tools are provided:
 
@@ -67,6 +67,28 @@ Once you have the API key and secret, add it to app/config.yml:
 	./console sgc:api:client test/version
 	./console sgc:api:client server/list
 	./console sgc:api:client server/stop serverId=abc123
+
+## Interactive shell:
+
+	./console sgc:shell
+
+Commands:
+* help/h/? - list commands
+* servers - list servers
+* server <option> - selects a server from the servers list. option can be an numeric option from the list or a server name. A partial name can also be provided and it will select the first match
+* reboot <server> - reboots a server. <server> is optional. If not given it will use the selected server. It will ask for confirmation before proceding
+* shutdown <server> - shuts down a server. <server> is optional. If not given it will use the selected server. It will ask for confirmation before proceding
+* bootup <server> - boots up a server. <server> is optional. If not given it will use the selected server
+* domains - list domains under selected server
+* domain <option> - selects a domain from the domains list. option can be an numeric option from the list or a domain name. A partial name can also be provided and it will select the first match
+* apps - list apps under selected server
+* app <option> - selects a app from the apps list. option can be an numeric option from the list or a app name. A partial name can also be provided and it will select the first match
+* restart <app> - restarts an application. <app> is optional. If not given it will use the selected app. It will ask for confirmation before proceding
+* stop <app> - restarts an application. <app> is optional. If not given it will use the selected app. It will ask for confirmation before proceding
+* start <app> - restarts an application. <app> is optional. If not given it will use the selected app
+* . - runs the last command again
+* x/q - resets internal selections
+* exit/quit - exits shell
 
 ## WARNING
 
