@@ -73,6 +73,7 @@ Once you have the API key and secret, add it to app/config.yml:
 	./console sgc:shell
 
 Commands:
+
 * help/h/? - list commands
 * servers - list servers
 * server <option> - selects a server from the servers list. option can be an numeric option from the list or a server name. A partial name can also be provided and it will select the first match
