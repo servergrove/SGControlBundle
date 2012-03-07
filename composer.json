@@ -1,11 +1,11 @@
 {
     "name": "servergrove/sgcontrol-bundle",
-    "description": "Client for ServerGrove Control Panel API",
+    "description": "Client for ServerGrove Control Panel API. Includes an interactive shell.",
     "keywords": ["api", "vps", "servergrove"],
     "homepage": "http://github.com/servergrove/SGControlBundle",
     "type": "symfony-bundle",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "authors": [
         {
             "name":" Pablo Godel",
