@@ -16,7 +16,7 @@ class APIClientCommand extends ContainerAwareCommand
         parent::configure();
 
         $this
-                ->setName('sgc:api:client')
+                ->setName('sg:api:client')
                 ->setDescription("Executes a call to the ServerGrove Control Panel API. For more information visit https://control.servergrove.com/docs/api")
                 ->addArgument('call', InputArgument::REQUIRED, 'API Call')
                 ->addArgument('args', InputArgument::OPTIONAL, 'API Arguments')

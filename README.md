@@ -57,20 +57,20 @@ Once you have the API key and secret, add it to app/config.yml:
 
 ## Usage:
 
-	./console sgc:api:client call [args]
+	./console sg:api:client call [args]
 
 * call: call composed of namespace and action (ie. server/list)
 * args: (optional) list of variables to send to the call (ie. serverId=abc123&isActive=0)
 
 ## Example:
 
-	./console sgc:api:client test/version
-	./console sgc:api:client server/list
-	./console sgc:api:client server/stop serverId=abc123
+	./console sg:api:client test/version
+	./console sg:api:client server/list
+	./console sg:api:client server/stop serverId=abc123
 
 ## Interactive shell:
 
-	./console sgc:shell
+	./console sg:shell
 
 Commands:
 

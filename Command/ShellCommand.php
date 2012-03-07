@@ -55,7 +55,7 @@ class ShellCommand extends ContainerAwareCommand
         parent::configure();
 
         $this
-                ->setName('sgc:shell')
+                ->setName('sg:shell')
                 ->setDescription("Provides a shell for the ServerGrove Control Panel API. For more information visit https://control.servergrove.com/docs/api")
                 ->addArgument('args', InputArgument::OPTIONAL, 'API Arguments')
                 ->addOption('url', null, null, 'API URL')
@@ -196,7 +196,8 @@ class ShellCommand extends ContainerAwareCommand
         $this->selectApp($args[0]);
     }
 
-    protected function selectServer($s = null) {
+    protected function selectServer($s = null)
+    {
         if (!count($this->servers)) {
             if (!$this->loadServers()) {
                 return false;
@@ -232,15 +233,16 @@ class ShellCommand extends ContainerAwareCommand
         return false;
     }
 
-    protected function setServer($server) {
+    protected function setServer($server)
+    {
         $this->server = $this->servers[$server];
         $this->info("Selected server ".$this->server['hostname']);
         $this->reset(false);
         return true;
     }
 
-
-    protected function selectDomain($s = null) {
+    protected function selectDomain($s = null)
+    {
         if (!count($this->domains)) {
             if (!$this->loadDomains()) {
                 return false;
@@ -276,14 +278,15 @@ class ShellCommand extends ContainerAwareCommand
         return false;
     }
 
-
-    protected function setDomain($domain) {
+    protected function setDomain($domain)
+    {
         $this->domain = $this->domains[$domain];
         $this->info("Selected domain ".$this->domain['name']);
         return true;
     }
 
-    protected function selectApp($s = null) {
+    protected function selectApp($s = null)
+    {
            if (!count($this->apps)) {
                if (!$this->loadApps()) {
                    return false;
@@ -319,8 +322,8 @@ class ShellCommand extends ContainerAwareCommand
            return false;
        }
 
-
-    protected function setApp($app) {
+    protected function setApp($app)
+    {
         $this->app = $this->apps[$app];
         $this->info("Selected app ".$this->app['name']);
         return true;
@@ -643,7 +646,6 @@ class ShellCommand extends ContainerAwareCommand
         return true;
     }
 
-
     protected function executeBootup($args)
     {
         if (count($args) == 1) {
@@ -677,7 +679,6 @@ class ShellCommand extends ContainerAwareCommand
 
         return true;
     }
-
 
     protected function executeRestart($args)
     {
@@ -738,9 +739,6 @@ class ShellCommand extends ContainerAwareCommand
         return $this->appCall('svcStart');
     }
 
-
-
-
     function readline($prompt="")
     {
        $this->output->write($prompt);
@@ -783,5 +781,4 @@ class ShellCommand extends ContainerAwareCommand
 
         return $res;
     }
-
 }
