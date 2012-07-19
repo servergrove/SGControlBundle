@@ -81,6 +81,7 @@ Commands:
 * reboot [server] - reboots a server. [server] is optional. If not given it will use the selected server. It will ask for confirmation before proceding
 * shutdown [server] - shuts down a server. [server] is optional. If not given it will use the selected server. It will ask for confirmation before proceding
 * bootup [server] - boots up a server. [server] is optional. If not given it will use the selected server
+* discover [server] - sends a discover request to server. A discover request will update server and apps information. [server] is optional. If not given it will use the selected server.
 * domains - list domains under selected server
 * domain [option] - selects a domain from the domains list. option can be an numeric option from the list or a domain name. A partial name can also be provided and it will select the first match
 * apps - list apps under selected server

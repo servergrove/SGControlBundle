@@ -44,6 +44,7 @@ class ShellCommand extends ContainerAwareCommand
         'reboot',
         'shutdown',
         'bootup',
+        'discover',
         'restart',
         'stop',
         'start',
@@ -665,6 +666,40 @@ class ShellCommand extends ContainerAwareCommand
 
         $this->info("Sending request...");
         if (!$res = $this->call('server/start', array(
+            'serverId' => $serverId,
+            'async' => 0,
+            ))) {
+            return false;
+        }
+
+        if (false === $rsp = $this->client->getResponse(APIClient::FORMAT_ARRAY)) {
+            return false;
+        }
+
+        $this->output->writeln($rsp['msg']);
+
+        return true;
+    }
+
+    protected function executeDiscover($args)
+    {
+        if (count($args) == 1) {
+            if (!$this->selectServer($args[0])) {
+                return false;
+            }
+        }
+
+        if (!$this->server) {
+            if (!$this->selectServer()) {
+                return $this->error('No server selected');
+            }
+        }
+
+        $serverId = $this->server['id'];
+
+
+        $this->info("Sending request...");
+        if (!$res = $this->call('server/discover', array(
             'serverId' => $serverId,
             'async' => 0,
             ))) {
